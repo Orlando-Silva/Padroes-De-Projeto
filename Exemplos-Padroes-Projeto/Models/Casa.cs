@@ -23,7 +23,7 @@ namespace ExemplosPadrõesProjeto.Models
             this.Estilo = estilo;
         }
 
-        public List<Movel> Moveis { get; set;}
+        public List<Movel> Moveis { get; set; } = new List<Movel>();
 
         public int Id { get; set; }
 

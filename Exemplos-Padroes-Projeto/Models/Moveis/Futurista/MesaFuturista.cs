@@ -17,6 +17,7 @@ namespace ExemplosPadrõesProjeto.Models.Moveis
         /// </summary>
         public MesaFuturista() : base("Mesa Futurista")
         {
+            this.URL = "http://zoopcreative.com.br/zoop/images/stories/blog/zoopcreativejob-design%20de%20moveis%20futurista-mesa.jpg";
         }
     }
 }

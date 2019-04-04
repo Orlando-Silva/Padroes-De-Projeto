@@ -13,6 +13,7 @@ namespace ExemplosPadrõesProjeto.Models.Moveis.Barroco
     {
         public CadeiraBarroca() : base("Cadeira Barroca")
         {
+            this.URL = "https://st.depositphotos.com/1207999/2735/i/950/depositphotos_27358733-stock-photo-baroque-chair.jpg";
         }
     }
 }

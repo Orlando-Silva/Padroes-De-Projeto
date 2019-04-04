@@ -4,14 +4,16 @@ using ExemplosPadrõesProjeto.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ExemplosPadroesProjeto.Migrations
 {
     [DbContext(typeof(ResidenciaContext))]
-    partial class ResidenciaContextModelSnapshot : ModelSnapshot
+    [Migration("20190404045116_URLColumn")]
+    partial class URLColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

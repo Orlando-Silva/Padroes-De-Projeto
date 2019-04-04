@@ -17,6 +17,7 @@ namespace ExemplosPadrõesProjeto.Models.Moveis
         /// </summary>
         public MesaBarroca() : base("Mesa Barroca")
         {
+            this.URL = "http://www.livingeventos.com.br/wp-content/uploads/2015/03/LiS3-500x500.jpg";
         }
     }
 }

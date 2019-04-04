@@ -16,7 +16,7 @@ using ExemplosPadrõesProjeto.Models.Moveis;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Linq;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace ExemplosPadrõesProjeto.Controllers
 {
@@ -40,7 +40,9 @@ namespace ExemplosPadrõesProjeto.Controllers
         
         }
 
-        public IActionResult Edit(int? index)
+        [HttpGet]
+        [Route("Edit/{id}")]
+        public IActionResult Edit(int? id)
         {
             IEnumerable<SelectListItem> values = from EstiloEnum e in Enum.GetValues(typeof(EstiloEnum))
                                                  select new SelectListItem
@@ -50,9 +52,9 @@ namespace ExemplosPadrõesProjeto.Controllers
                                                  };
             ViewBag.EstiloLista = new SelectList(values, "Value", "Text");
             Casa casa;
-            if (index != null)
+            if (id != null)
             {
-                casa = context.Casas.Find(index);
+                casa = context.Casas.Include(m => m.Moveis).Where(m => m.Id == id).First();
             }
             else
             {
@@ -62,9 +64,10 @@ namespace ExemplosPadrõesProjeto.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(int? index, [FromForm] Casa casa)
+        [Route("Edit/{id}")]
+        public IActionResult Edit(int? id, [FromForm] Casa casa)
         {
-            if (casa.Id == index)
+            if (casa.Id == id)
             {
                 context.Attach(casa);
                 context.SaveChanges();
@@ -72,32 +75,39 @@ namespace ExemplosPadrõesProjeto.Controllers
             return View("Index");
         }
 
-        public IActionResult Salvar(int? index, Casa casa)
+        [HttpPost]
+        [Route("Salvar/{Id}")]
+        public IActionResult Salvar(int? Id, [FromForm]Casa casa)
         {
-            if(casa.Id == index)
+            if(casa.Id == Id)
             {
                 context.Attach(casa);
                 context.SaveChanges();
-            }else if(casa.Id == 0 && index == null)
+            }else if(casa.Id == 0 && Id == null)
             {
                 context.Add(casa);
                 context.SaveChanges();
             }
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
-        public IActionResult CriarCasa(string Estilo)
-        {
-            Casa casa = new Casa((EstiloEnum)Enum.Parse(typeof(EstiloEnum), Estilo));
-            return View();
-        }
-
-
-        public IActionResult CriarMovel(int CasaId, string Movel)
+        [HttpPost]        
+        public IActionResult CriarMovel(int CasaId)
         {
             Casa casa = context.Casas.Find(CasaId);
-            var factory = Models.Moveis.MovelAbstractFactory.CriarInstancia(casa.Estilo);
-            return View();
+            string MovelStr = Request.Form["CasaCriarId"].ToString();
+            int MovelID = 0;
+            if(int.TryParse(MovelStr, out MovelID))
+            {
+                MovelEnum movelEnum
+                    = (MovelEnum)Enum.ToObject(typeof(MovelEnum), MovelID);
+                var factory = Models.Moveis.MovelAbstractFactory.CriarInstancia(casa.Estilo);
+                Movel movel = factory.CriarMovel((MovelEnum)Enum.Parse(typeof(MovelEnum), MovelStr));
+                casa.Moveis.Add(movel);
+                context.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
