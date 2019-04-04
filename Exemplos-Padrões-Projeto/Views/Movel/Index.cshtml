@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ExemplosPadrõesProjeto.Models.Casa>
+@{
+    ViewData["Title"] = "Móveis";
+}
+
+
+<table class="table">
+    <tr>
+        <th>            
+            "ID"
+        </th>
+        <th>
+            "Estilo"
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estilo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estilo)
+            </td>
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }

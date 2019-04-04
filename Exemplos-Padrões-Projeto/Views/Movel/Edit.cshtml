@@ -1,0 +1,27 @@
+﻿@model ExemplosPadrõesProjeto.Models.Casa
+@{
+    ViewData["Title"] = "Móveis";
+}
+
+<h2>Móveis</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.Estilo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Estilo, Html.GetEnumSelectList<ExemplosPadrõesProjeto.Models.Moveis.EstiloEnum>(), htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Estilo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Salvar" class="btn btn-default" />
+            <button asp-action="Salvar" asp-route-Estilo=@Model.Estilo class="btn btn-primary">Criar</button>
+        </div>
+    </div>
+
+}
+
+
