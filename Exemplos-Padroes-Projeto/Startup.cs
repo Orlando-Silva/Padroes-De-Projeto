@@ -35,7 +35,8 @@ namespace Exemplos_Padrões_Projeto
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=ResidenciaDB;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = Configuration.GetConnectionString("ResidenciaContext");
+            //var connection = @"Server=(localdb)\mssqllocaldb;Initial Catalog=ResidenciaDB;";
             services.AddDbContext<ResidenciaContext>
                 (options => options.UseSqlServer(connection));
         }

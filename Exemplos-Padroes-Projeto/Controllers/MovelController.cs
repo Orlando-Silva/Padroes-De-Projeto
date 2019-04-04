@@ -78,6 +78,10 @@ namespace ExemplosPadrõesProjeto.Controllers
             {
                 context.Attach(casa);
                 context.SaveChanges();
+            }else if(casa.Id == 0 && index == null)
+            {
+                context.Add(casa);
+                context.SaveChanges();
             }
             return View("Index");
         }

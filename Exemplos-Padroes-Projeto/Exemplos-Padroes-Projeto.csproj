@@ -14,6 +14,5 @@
     <Folder Include="Models\Moveis\" />
     <Folder Include="Models\Moveis\Futurista\" />
     <Folder Include="Models\Moveis\Barroco\" />
-    <Folder Include="Views\Movel\" />
   </ItemGroup>
 </Project>

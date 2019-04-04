@@ -14,6 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Exemplos-Padrões-Projeto\Exemplos-Padrões-Projeto.csproj" />
+    <ProjectReference Include="..\Exemplos-Padroes-Projeto\Exemplos-Padroes-Projeto.csproj" />
   </ItemGroup>
 </Project>
