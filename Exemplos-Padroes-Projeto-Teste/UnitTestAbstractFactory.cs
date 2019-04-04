@@ -2,6 +2,7 @@ using System;
 using ExemplosPadrõesProjeto.Models.Moveis;
 using Xunit;
 using ExemplosPadrõesProjeto.Models;
+using ExemplosPadrõesProjeto.Models.Moveis.Barroco;
 
 namespace Exemplos_Padrões_Projeto_Teste
 {
@@ -12,7 +13,7 @@ namespace Exemplos_Padrões_Projeto_Teste
             {
             MovelAbstractFactory factory = MovelAbstractFactory.CriarInstancia(EstiloEnum.Barroco);
             Movel mesa = factory.CriarMovel(MovelEnum.Mesa);
-            Assert.IsType(typeof(MesaBarroca), mesa);
+            Assert.IsType<MesaBarroca>(mesa);
             }
 
         [Fact]

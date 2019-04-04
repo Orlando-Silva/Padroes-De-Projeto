@@ -6,6 +6,7 @@
 //  Copyright (c) 2019 
 //
 //  Este arquivo não pode ser modificado, cedido ou alterado sem a permissão explicita do autor.
+using ExemplosPadroesProjeto.Models.Moveis;
 using System;
 namespace ExemplosPadrõesProjeto.Models.Moveis
 {
@@ -20,6 +21,8 @@ namespace ExemplosPadrõesProjeto.Models.Moveis
                     return CriarCadeira();
                 case MovelEnum.Mesa:
                     return CriarMesa();
+                case MovelEnum.Armario:
+                    return CriarArmario();
                 default:
                     return null;
             }
@@ -29,6 +32,8 @@ namespace ExemplosPadrõesProjeto.Models.Moveis
 
 
         protected abstract Cadeira CriarCadeira();
+
+        protected abstract Armario CriarArmario();
 
         public MovelAbstractFactory()
         {

@@ -7,6 +7,9 @@
 //
 //  Este arquivo não pode ser modificado, cedido ou alterado sem a permissão explicita do autor.
 using System;
+using ExemplosPadroesProjeto.Models.Moveis;
+using ExemplosPadroesProjeto.Models.Moveis.Futurista;
+
 namespace ExemplosPadrõesProjeto.Models.Moveis
 {
     public class MovelFuturistaFactory : MovelAbstractFactory
@@ -19,6 +22,11 @@ namespace ExemplosPadrõesProjeto.Models.Moveis
         protected override Mesa CriarMesa()
         {
             return new MesaFuturista();
+        }
+
+        protected override Armario CriarArmario()
+        {
+            return new ArmarioFuturista();
         }
     }
 }

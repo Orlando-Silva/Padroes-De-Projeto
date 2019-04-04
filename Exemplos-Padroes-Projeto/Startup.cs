@@ -54,7 +54,7 @@ namespace Exemplos_Padrões_Projeto
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            app.UseHttpMethodOverride();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 

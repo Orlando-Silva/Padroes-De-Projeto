@@ -31,6 +31,7 @@
 
 
     </div>
+    @if (Model.Id > 0) { 
     <div class="form-group">
         @Html.LabelFor(model => model.Moveis, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -50,6 +51,7 @@
         </div>
 
     </div>
+    }
 }
 
 

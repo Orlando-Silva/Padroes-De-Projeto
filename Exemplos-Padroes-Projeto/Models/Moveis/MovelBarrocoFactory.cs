@@ -6,6 +6,9 @@
 //  Copyright (c) 2019 
 //
 //  Este arquivo não pode ser modificado, cedido ou alterado sem a permissão explicita do autor.
+using ExemplosPadroesProjeto.Models.Moveis;
+using ExemplosPadrõesProjeto.Models.Moveis.Barroco;
+using ExemplosPadroesProjeto.Models.Moveis.Barroco;
 using System;
 namespace ExemplosPadrõesProjeto.Models.Moveis
 {
@@ -13,12 +16,17 @@ namespace ExemplosPadrõesProjeto.Models.Moveis
     {
         protected override Cadeira CriarCadeira()
         {
-            throw new NotImplementedException();
+            return new CadeiraBarroca();
         }
 
         protected override Mesa CriarMesa()
         {
             return new MesaBarroca();
+        }
+
+        protected override Armario CriarArmario()
+        {
+            return new ArmarioBarroco();
         }
     }
 }

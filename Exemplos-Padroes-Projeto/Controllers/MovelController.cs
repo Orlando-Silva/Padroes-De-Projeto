@@ -20,6 +20,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ExemplosPadrõesProjeto.Controllers
 {
+    
     public class MovelController : Controller
     {
         public MovelController(ResidenciaContext dbContext)
@@ -35,13 +36,13 @@ namespace ExemplosPadrõesProjeto.Controllers
             if (context.Casas.Count() > 0)
             {
                 lista = context.Casas.ToList();
-            }
+            }            
             return View(lista);
         
         }
 
         [HttpGet]
-        [Route("Edit/{id}")]
+        [Route("Edit/{id?}")]
         public IActionResult Edit(int? id)
         {
             IEnumerable<SelectListItem> values = from EstiloEnum e in Enum.GetValues(typeof(EstiloEnum))
@@ -101,8 +102,8 @@ namespace ExemplosPadrõesProjeto.Controllers
             {
                 MovelEnum movelEnum
                     = (MovelEnum)Enum.ToObject(typeof(MovelEnum), MovelID);
-                var factory = Models.Moveis.MovelAbstractFactory.CriarInstancia(casa.Estilo);
-                Movel movel = factory.CriarMovel((MovelEnum)Enum.Parse(typeof(MovelEnum), MovelStr));
+                var factory = MovelAbstractFactory.CriarInstancia(casa.Estilo);
+                Movel movel = factory.CriarMovel(movelEnum);
                 casa.Moveis.Add(movel);
                 context.SaveChanges();
             }
