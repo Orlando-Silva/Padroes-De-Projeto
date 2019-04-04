@@ -1,9 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplos-Padrões-Projeto", "Exemplos-Padrões-Projeto\Exemplos-Padrões-Projeto.csproj", "{FBB81CFA-1824-4F20-A413-B2E072519A15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplos-Padroes-Projeto", "Exemplos-Padrões-Projeto\Exemplos-Padroes-Projeto.csproj", "{FBB81CFA-1824-4F20-A413-B2E072519A15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplos-Padrões-Projeto-Teste", "Exemplos-Padrões-Projeto-Teste\Exemplos-Padrões-Projeto-Teste.csproj", "{9C11D36F-1DF4-4CA1-AD39-12C9FBCD11E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplos-Padroes-Projeto-Teste", "Exemplos-Padrões-Projeto-Teste\Exemplos-Padroes-Projeto-Teste.csproj", "{9C11D36F-1DF4-4CA1-AD39-12C9FBCD11E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
