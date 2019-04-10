@@ -9,7 +9,7 @@ namespace ExemplosPadroesProjeto.Models.Moveis.Futurista
     {
         public SofaFuturista() : base("Sofa Futurista")
         {
-            this.URL = "https://www.grupodeartes.com.br/images/stories/virtuemart/product/DSC_7085.jpg";
+            this.URL = "https://www.construdeia.com/decoracao/wp-content/gallery/sofa-futuriata/sofa-futurista-12.jpg";
         }
     }
 }

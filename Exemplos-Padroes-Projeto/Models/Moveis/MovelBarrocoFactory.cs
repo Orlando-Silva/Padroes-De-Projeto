@@ -31,7 +31,7 @@ namespace ExemplosPadrõesProjeto.Models.Moveis
 
         protected override Sofa CriarSofa()
         {
-            throw new NotImplementedException();
+            return new SofaBarroco();
         }
     }
 }
