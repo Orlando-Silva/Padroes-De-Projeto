@@ -30,6 +30,17 @@ namespace ExemplosPadrõesProjeto.Models
         public DbSet<ArmarioBarroco> ArmariosBarrocos { get; set; }
 
         public DbSet<ArmarioFuturista> ArmariosFuturistas { get; set; }
+        public DbSet<ExemplosPadroesProjeto.Models.Moveis.Gotico.ArmarioGotico> ArmarioGoticos { get; set; }
+
+        public DbSet <ExemplosPadroesProjeto.Models.Moveis.Gotico.CadeiraGotica> CadeiraGoticas { get; set; }
+
+        public DbSet<ExemplosPadroesProjeto.Models.Moveis.Gotico.SofaGotico> SofaGoticos { get; set; }
+
+        public DbSet<ExemplosPadroesProjeto.Models.Moveis.Gotico.MesaGotica> MesaGoticas { get; set; }
+
+        public DbSet<SofaBarroco> SofaBarrocos { get; set; }
+
+        public DbSet<SofaFuturista> SofaFuturistas { get; set; }
 
         public DbSet<Casa> Casas { get; set; }
     }

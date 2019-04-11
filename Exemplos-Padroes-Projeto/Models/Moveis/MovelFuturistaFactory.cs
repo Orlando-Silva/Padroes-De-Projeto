@@ -28,5 +28,10 @@ namespace ExemplosPadrõesProjeto.Models.Moveis
         {
             return new ArmarioFuturista();
         }
+
+        protected override Sofa CriarSofa()
+        {
+            return new SofaFuturista();
+        }
     }
 }
