@@ -3,6 +3,7 @@ using ExemplosPadrõesProjeto.Models.Moveis;
 using Xunit;
 using ExemplosPadrõesProjeto.Models;
 using ExemplosPadrõesProjeto.Models.Moveis.Barroco;
+using ExemplosPadrõesProjeto.Models.Moveis.Steampunk;
 
 namespace Exemplos_Padrões_Projeto_Teste
 {
@@ -21,9 +22,19 @@ namespace Exemplos_Padrões_Projeto_Teste
         {
             MovelAbstractFactory factory = MovelAbstractFactory.CriarInstancia(EstiloEnum.Futurista);
             Movel cadeira = factory.CriarMovel(MovelEnum.Cadeira);
-            Assert.IsType(typeof(Cadeira), cadeira);
+            Assert.IsType<CadeiraFuturista>(cadeira);
             Movel mesa = factory.CriarMovel(MovelEnum.Mesa);
-            Assert.IsType(typeof(MesaFuturista), mesa);
+            Assert.IsType<MesaFuturista>(mesa);
+        }
+
+        [Fact]
+        public void TestCriarSteampunk()
+        {
+            MovelAbstractFactory factory = MovelAbstractFactory.CriarInstancia(EstiloEnum.Steampunk);
+            Movel cadeira = factory.CriarMovel(MovelEnum.Cadeira);
+            Assert.IsType<CadeiraSteampunk>(cadeira);
+            Movel mesa = factory.CriarMovel(MovelEnum.Mesa);
+            Assert.IsType<MesaSteampunk>(mesa);
         }
     }
 }

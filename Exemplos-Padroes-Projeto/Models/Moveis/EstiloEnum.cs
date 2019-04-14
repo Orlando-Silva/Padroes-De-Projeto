@@ -18,6 +18,8 @@ namespace ExemplosPadrõesProjeto.Models.Moveis
         [DisplayName("Barroco")]
             Barroco,
         [DisplayName("Gotico")]
-            Gotico
+            Gotico,
+        [DisplayName("Steampunk")]
+            Steampunk
     }
 }

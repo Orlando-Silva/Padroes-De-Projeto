@@ -33,5 +33,10 @@ namespace ExemplosPadrõesProjeto.Models.Moveis
         {
             return new SofaBarroco();
         }
+
+        protected override Prateleira CriarPrateleira()
+        {
+            return new PrateleiraBarroca();
+        }
     }
 }

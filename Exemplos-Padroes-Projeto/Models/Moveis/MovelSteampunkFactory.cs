@@ -1,33 +1,34 @@
 ﻿using ExemplosPadrõesProjeto.Models.Moveis;
-using ExemplosPadroesProjeto.Models.Moveis.Gotico;
+using ExemplosPadrõesProjeto.Models.Moveis.Steampunk;
+using ExemplosPadroesProjeto.Models.Moveis.Steampunk;
 
 namespace ExemplosPadroesProjeto.Models.Moveis
 {
-    public class MovelGoticoFactory : MovelAbstractFactory
+    public class MovelSteampunkFactory : MovelAbstractFactory
     {
         protected override Cadeira CriarCadeira()
         {
-            return new CadeiraGotica();
+            return new CadeiraSteampunk();
         }
 
         protected override Mesa CriarMesa()
         {
-            return new MesaGotica();
+            return new MesaSteampunk();
         }
 
         protected override Armario CriarArmario()
         {
-            return new ArmarioGotico();
+            return new ArmarioSteampunk();
         }
 
         protected override Sofa CriarSofa()
         {
-            return new SofaGotico();
+            return new SofaSteampunk();
         }
 
         protected override Prateleira CriarPrateleira()
         {
-            return new PrateleiraGotica();
+            return new PrateleiraSteampunk();
         }
     }
 }
